@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="myBox" class="box blue shadow">I am a Box</div>
+  <button id="add">Add "highlight"</button>
+  <button id="remove">Remove "blue"</button>
+  <button id="toggle">Toggle "rounded"</button>
+  <button id="check">check "shadow"</button>
+
+  <script>
+    let myBox = document.getElementById("myBox");
+    let output = document.createElement("p");
+    document.body.appendChild(output);
+
+    document.getElementById("add").
+      addEventListener("click", () => {
+        myBox.classList.add("highlight");
+        output.textContent = "Class 'highlight' Added";
+      });
+
+    document.getElementById("remove").
+      addEventListener("click", () => {
+        myBox.classList.remove("blue");
+        output.textContent = "Class 'blue' removed";
+      });
+
+    document.getElementById("toggle").
+      addEventListener("click", () => {
+        myBox.classList.toggle("blue");
+        output.textContent = "Class 'rounded' toggled";
+      });
+
+    document.getElementById("check").
+      addEventListener("click", () => {
+       let hasShadow = myBox.classList.contains("shadow");
+       output.textContent = hasShadow ? 'Yes "shadow" class exists' : '"shadow" class is missing';
+      });
+  </script>
+</body>
+
+</html>
