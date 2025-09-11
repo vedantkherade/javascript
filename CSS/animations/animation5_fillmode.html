@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .hold-box {
+            width: 120px;
+            height: 120px;
+            background: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            animation-name: grow;
+            animation-duration: 3s;
+            animation-delay: 3s;
+            animation-fill-mode: backwards;
+            
+
+            
+        }
+
+        @keyframes grow {
+            from {
+                transform: scale(1);
+                background: orange;
+            }
+
+            to {
+                transform: scale(1.5);
+                background: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- animation-fill-mode -->
+    <div class="hold-box">Final Hold</div>
+</body>
+</html>

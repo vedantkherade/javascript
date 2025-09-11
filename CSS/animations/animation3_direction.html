@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+        .ball {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: dodgerblue;
+
+            animation-name: bounce;
+            animation-duration: 3s;
+            animation-direction: reverse;
+            
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- animation-direction -->
+    <div class="ball"></div>
+</body>
+</html>

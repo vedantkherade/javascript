@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky <header></header></title>
+    <style>
+        .scroll-box{
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid black;
+            margin: 40px auto;
+            padding: 0;
+        }
+
+        .task-list{
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
+
+        .sticky-title{
+            background-color: rgb(11, 185, 244);
+            position: sticky;
+            top: 0;
+            padding: 10px;
+        } 
+
+    
+    </style>
+</head>
+<body>
+    <div class="scroll-box">
+        <h2 class="sticky-title">My Tasks</h2>
+        <div class="task-list">
+            <p>Task1</p>
+            <p>Task2</p>
+            <p>Task3</p>
+            <p>Task4</p>
+            <p>Task5</p>
+            <p>Task6</p>
+            <p>Task7</p>
+            <p>Task8</p>
+        </div>
+    </div>
+    
+</body>
+</html>

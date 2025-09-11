@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .box {
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            background: dodgerblue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            animation: move 3s infinite;
+        }
+
+        .linear {
+            animation-timing-function: linear;
+        }
+
+        .ease {
+            animation-timing-function: ease;
+        }
+
+        .ease-in {
+            animation-timing-function: ease-in;
+        }
+
+        .ease-out {
+            animation-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(300px);
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- animation-timing-function -->
+    <div class="box linear">Linear</div>
+    <div class="box ease">Ease</div>
+    <div class="box ease-in">Ease-In</div>
+    <div class="box ease-out">Ease-Out</div>
+    <div class="box ease-in-out">Ease-In-Out</div>
+</body>
+</html>
+<!-- shortend property -->
+<!-- animation: name duration timing-function delay iteration-count direction fill-mode play-state; -->

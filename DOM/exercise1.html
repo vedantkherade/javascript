@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h2>My DOM Playground</h2>
+        <button id="add">Add paragraph</button>
+        <button id="remove">Remove paragraph</button>
+    </div>
+    
+    <script>
+       let container = document.getElementById("container");
+       let addBtn = document.getElementById("add");
+       let removeBtn = document.getElementById("remove");
+       let newPara = null;
+
+       addBtn.addEventListener('click', () =>{
+        newPara = document.createElement('p');
+        newPara.textContent = "New Paragraph";
+
+        container.appendChild(newPara);
+       })
+
+       removeBtn.addEventListener('click', () =>{
+        if(newPara){
+            container.removeChild(newPara);
+            newPara = null;
+        }
+       })
+    </script>
+</body>
+</html>

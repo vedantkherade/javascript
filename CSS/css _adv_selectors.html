@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*1.  Descendant Selector */
+        /* Selects all p that are inside div */
+        div p{
+            color: red;
+        }
+        
+        /*2. Child Selector */
+        /* only direct child p inside div */
+        div > p{
+            font-weight: bold;
+        }
+
+        /* 3. Adjacent Sibling Selector */
+        /* The very next p after h2 */
+        h2 + p{
+            color: green;
+        }
+
+        /* 4. General Sibling Selector */
+        /* All p after h2 (siblings) */
+        h2 ~ p{
+            background-color: gray;
+        }
+
+        /* 5. Attribute Selector */
+        /* All h3 having attribute class and its value */
+        h3[]
+
+    </style>
+</head>
+<body>
+    <h1>Company Team Structure</h1>
+
+    <div>
+        <p>Manager: Sarah Johnson</p>
+        <section>
+            <p>Team Member: John Doe</p>
+        </section>
+        <p>Another Member</p>
+    </div>
+
+    <h2>Project Updates</h2>
+    <p>Kick-off meeting scheduled for Monday at 10:00 AM</p>
+    <a href="#">Refer this link</a>
+    <p>Design draft will be shared by Wednesday.</p>
+    <p>Final presentaion planned for nest Friday</p>
+
+    <h3 class="sop">SOP to be followed</h3>
+    <h3 class="ethics">Ethics and Work Practices</h3>
+    <h3 class="ethics">Ehichs: Lorem ipsum dolor sit amet consectetur.</h3>
+    
+</body>
+</html>
