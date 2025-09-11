@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="actionBtn" type="button">Click</button>
+    <div id="output"></div>
+
+    <script>
+        let btn = document.getElementById('actionBtn');
+        let output = document.getElementById('output');
+
+        //1. Set attribute
+        btn.addEventListener("click", () => {
+            btn.setAttribute("class", "btn-primary");
+            output.textContent = "Attribute 'class' set to 'btn-primary";
+        });
+
+        //2. Get attribute
+        btn.addEventListener("dblclick", () =>{
+            let typevalue = btn.getAttribute("type");
+            output.textContent = `The 'type' of button is: ${typevalue}`;
+        });
+
+        //3. Remove attribute (on right click)
+        btn.addEventListener("contextmenu", (event) =>{
+            event.preventDefault();
+            btn.removeAttribute("class");
+            output.textContent = "Attribute 'class' removed";
+        });
+    </script>
+</body>
+</html>
