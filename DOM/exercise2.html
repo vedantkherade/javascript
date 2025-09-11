@@ -11,8 +11,17 @@
     <div id="output"></div>
 
     <script>
-        let text = document.getElementById('add-text');
-        let html = document.getElementById('add-html');
+        let plainText = document.getElementById('add-text');
+        let htmlText = document.getElementById('add-html');
+        let output = document.getElementById('output');
+
+        plainText.addEventListener('click', () =>{
+            output.textContent = "<strong>This is plain text</strong>";
+        })
+
+        htmlText.addEventListener('click', () =>{
+            output.innerHTML = "<strong>This is HTML text</strong>";
+        })
     </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myBox" class="box blue shadow">I am a box</div>
+    <button id="add">Add "highlight"</button>
+    <button id="remove">Remove "blue"</button>
+    <button id="toggle">Toggle "rounded"</button>
+    <button id="check">check "shadow"</button>
+
+    <script>
+      let myBox = document.getElementById("myBox");
+      let add = document.getElementById("add");
+      let remove = document.getElementById("remove");
+      let toggle = document.getElementById("toggle");
+      let check = document.getElementById("check");
+      let message = document.createElement("p");
+      document.body.appendChild("message");
+
+      add.addEventListener("click", () => {
+        myBox.classList.add("highlight");
+        message.innerHTML = "<strong>class 'highlight' added to div </strong>";
+      });
+    </script>
+</body>
+
+</html>

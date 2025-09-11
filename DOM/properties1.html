@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="unique" class="box shadow gray">container</div>
+    <div id="opaque" class="box shadow gray">container</div>
+
+    <script>
+        let unique = document.getElementById("unique");
+        unique.className = "c1 c2";
+        console.log(unique.className);
+
+        unique.classList.add("box")
+
+        unique.classList.remove("box");
+
+        unique.classList.toggle("shadow");
+
+        let hasshadow = unique.classList.contains("shadow");
+        console.log(hasshadow);
+
+        unique.classList.replace("shagow", "box-shadow");
+    </script>
+</body>
+</html>
