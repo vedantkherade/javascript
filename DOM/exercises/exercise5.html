@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="theme-toggle-btn">Toggle Theme</button>
+    <h1>Hello</h1>
+     
+    <script>
+        let body = document.querySelector("body");
+        let toggleBtn = document.getElementById("theme-toggle-btn");
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-theme");
+        })
+        
+    </script>
+</body>
+
+</html>
