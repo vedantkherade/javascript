@@ -14,22 +14,24 @@
     <script>
         let showBtn = document.getElementById("show-btn");
         let closeBtn = document.getElementById("close-btn");
-        let added = [];
 
-        showBtn.addEventListener("click", () =>{
-            let newsletter = document.createElement("div");
-            newsletter.textContent = "Subscribe to our Newsletter";
-            newsletter.setAttribute("id", "newsletter");
-            document.body.appendChild(newsletter);
-            added.push(newsletter);
+
+        showBtn.addEventListener("click", () => {
+            if (!document.getElementById("newsletter")) {
+                let newsletter = document.createElement("div");
+                newsletter.textContent = "Subscribe to our Newsletter";
+                newsletter.setAttribute("id", "newsletter");
+                document.body.appendChild(newsletter);
+
+            }
         })
 
-        closeBtn.addEventListener("click", () =>{
-            let last = added.pop();
-            if(last){
-                document.body.removeChild(last);
+        closeBtn.addEventListener("click", () => {
+            let newsletter = document.getElementById("newsletter");
+            if (newsletter) {
+                document.body.removeChild(newsletter);
             }
-           
+
         })
     </script>
 </body>
