@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello there!</h1>
+
+    <input type="text" id="name" name="name" placeholder="name">
+    <input type="email" id="email" name="email" placeholder="email">
+    <button id="submit">Submit</button>
+
+    <script>
+        // let name = "Ajay";
+        // // localStorage.myName = "Ajay";
+        // // console.log(localStorage.myName);
+
+        // localStorage.setItem("myName", "Rohan");
+        // localStorage.setItem("myEmail", "rohan@email.com");
+
+        // console.log(localStorage.getItem("myName"));
+        // console.log(localStorage.getItem("myEmail"));
+
+       
+
+
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        // let submit = document.getElementById("submit")
+
+        // submit.addEventListener("click", () => {
+        //     localStorage.setItem("name", name.value);
+        //     localStorage.setItem("email", email.value);
+        //     alert("Saved to local storage!!");
+        //     name.value = "";
+        //     email.value = "";
+        // })   
+        
+        
+        // name.addEventListener("input", (e) => {
+        //     localStorage.setItem("name", e.target.value);
+        // })
+
+
+        // email.addEventListener("input", (e) => {
+        //     localStorage.setItem("email", e.target.value)
+        // })
+
+
+        const myData = {
+            name: "",
+            email: ""
+        }
+
+        name.addEventListener("input", (e) => {
+            myData.name = e.target.value;
+
+            localStorage.setItem("myData", JSON.stringify(myData));
+        })
+        
+        email.addEventListener("input", (e) => {
+            myData.email = e.target.value;
+
+            localStorage.setItem("myData", JSON.stringify(myData));
+        })
+
+        localStorage.setItem("myData", JSON.stringify(myData));
+
+        // localStorage.clear();
+        // localStorage.removeItem("myData");
+
+    </script>
+</body>
+</html>
