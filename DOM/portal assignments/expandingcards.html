@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{margin:0;padding:0;box-sizing:border-box;}
+    body{display:flex;justify-content:center;align-items:center;height:100vh;background:#eee;font-family:sans-serif;}
+
+    .container{display:flex;width:90vw;height:90vh;}
+
+    .panel{
+      flex:1;
+      margin:5px;
+      border-radius:15px;
+      overflow:hidden;
+      position:relative;
+      cursor:pointer;
+      transition:flex 0.5s;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
+    .panel img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .img-text{
+      position:absolute;
+      bottom:20px;
+      left:20px;
+      color:#fff;
+      font-size:20px;
+      font-weight:bold;
+      text-shadow:0 2px 5px rgba(0,0,0,0.7);
+      opacity:0;
+      transition:0.3s;
+    }
+
+    .panel.active{flex:5;}
+    .panel.active .img-text{opacity:1;}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel active" id="panel-1">
+            <img src="https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=1350&q=80"
+                alt="Explore the world">
+            <p class="img-text">Explore the world</p>
+        </div>
+        <div class="panel" id="panel-2">
+            <img src="https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=1350&q=80"
+                alt="Wild Forest">
+            <p class="img-text">Wild Forest</p>
+        </div>
+        <div class="panel" id="panel-3">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1353&q=80"
+                alt="City on Winter">
+            <p class="img-text">City on Winter</p>
+        </div>
+        <div class="panel" id="panel-4">
+            <img src="https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=1351&q=80"
+                alt="Mountain Cloud">
+            <p class="img-text">Mountain Cloud</p>
+        </div>
+        <div class="panel" id="panel-5">
+            <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1350&q=80"
+                alt="Sunny Beach">
+            <p class="img-text">Sunny Beach</p>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
