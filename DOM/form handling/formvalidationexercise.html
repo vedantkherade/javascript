@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myform">
+        <!-- full name -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Full Name"><br><br>
+        <!-- email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="abc@gmail.com"><br><br>
+        <!-- password -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"><br><br>
+        <!-- confirm password -->
+        <label for="confirmpassword">Confirm password</label>
+        <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
+        <!-- age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+        <!-- country -->
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+            <option value="">---select country</option>
+            <option value="india">India</option>
+            <option value="russia">Russia</option>
+            <option value="usa">USA</option>
+        </select><br><br>
+        <!-- terms -->
+        <label for="checkbox">Agree to terms and conditions:</label>
+        <input type="checkbox" id="checkbox" name="checkbox"><br><br>
+        <!-- submit button -->
+        <button id="submit" type="submit" value="submit">Submit</button><br><br>
+    </form>
+
+    <!-- error paragraph -->
+    <p id="error-msg" style="color: red;"></p>
+
+    <script>
+        let fullName = document.getElementById("fullname");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let confirmPassword = document.getElementById("confirmpassword");
+        let age = document.getElementById("age");
+        let country = document.getElementById("country");
+        let checkbox = document.getElementById("checkbox");
+        let myForm = document.getElementById("myform");
+        let errorMsg = document.getElementById("error-msg");
+
+        myForm.addEventListener("submit", (e) => {
+            // 1️⃣ Empty check for all important fields
+            let isValid = true;
+            errorMsg.textContent = "";
+
+            if (fullName.value.trim() == "" || email.value.trim() == "" || password.value.trim() == "" || confirmPassword.value.trim() == "" || age.value == "" || country.value == "" || checkbox.value == "") {
+                errorMsg.textContent = "Please fill all the details!!"
+                isValid = false
+            }
+            // 2️⃣ Basic email check
+            else if (!email.value.includes("@") || !email.value.includes(".")) {
+                errorMsg.textContent = "You entered invalid email!"
+                isValid = false;
+            }
+
+
+            // 3️⃣ Password match check'
+            else if (password.value !== confirmPassword.value) {
+                errorMsg.textContent = "Passwords did not match";
+                isValid = false;
+            }
+
+
+            // 4️⃣ Password strength check (without regex)
+            else if (password.value.length < 6) {
+                errorMsg.textContent = "Password length must be at least 6!";
+                isValid = false;
+            }
+
+            // 5️⃣ Age check
+            else if (parseInt(age.value) < 18) {
+                errorMsg.textContent = "Age must be above 18";
+                isValid = false;
+            }
+
+
+            // 6️⃣ Dropdown (Country) check
+            else if (country == "") {
+                errorMsg.textContent = "Please select country";
+                isValid = false;
+            }
+
+            // 7️⃣ Checkbox (Terms)
+            else if (!checkbox.checked) {
+                errorMsg.textContent = "Please agree to our terms and conditions";
+                isValid = false;
+            }
+
+
+
+
+
+            if (isValid) {
+                alert("Form submitted successfully!")
+            } else {
+                e.preventDefault();
+            }
+
+
+        })
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
