@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inputText">
+    <button id="btn">Add item</button>
+    <ul id="itemList"></ul>
+
+    <script>
+        let inputText = document.getElementById("inputText");
+        let btn = document.getElementById("btn");
+        let itemList = document.getElementById("itemList");
+
+        btn.addEventListener("click", () => {
+            let input = inputText.value.trim();
+
+            if(input == ""){
+                alert("Please Enter Item");
+                return;
+            }
+
+            let li = document.createElement("li");
+            li.textContent = input;
+
+            itemList.appendChild(li);
+
+            inputText.value = "";
+        })
+    </script>
+</body>
+</html>

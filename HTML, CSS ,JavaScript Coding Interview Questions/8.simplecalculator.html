@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="input1" placeholder="Enter number 1"><br><br>
+    <input type="number" name="" id="input2" placeholder="Enter number 2"><br><br>
+    <select name="" id="operation">
+        <option value="">---Choose operation</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select><br><br>
+    <button id="btn">Calculate</button>
+    <p id="res"></p>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            let num1 = document.getElementById("input1").value;
+            num1 = parseInt(num1);
+            let num2 = document.getElementById("input2").value;
+            num2 = parseInt(num2);
+            let op = document.getElementById("operation").value;
+            let result;
+            let res = document.getElementById("res");
+
+
+            if(op == "+") result = num1 + num2;
+            else if(op == "-") result = num1 - num2;
+            else if(op == "*") result = num1 * num2;
+            else if(op == "/") result = num2 !== 0 ? num1 / num2 : "cannot divide by 0";
+
+            res.textContent = `Input 1 = ${num1}, Input 2 = ${num2}, Operation = ${op} => Result = ${result}`;
+        })
+    </script>
+</body>
+</html>
