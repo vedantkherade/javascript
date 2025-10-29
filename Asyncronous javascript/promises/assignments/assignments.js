@@ -65,17 +65,45 @@
 
 
 //   Assignment 3
-function runStep(stepName) {
-  return new Promise((resolve) => {
+// function runStep(stepName) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log(stepName);
+//       resolve();
+//     }, 1000);
+//   });
+// }
+
+// runStep("Step 1: Preparing cart")
+//   .then(() => runStep("Step 2: Processing payment"))
+//   .then(() => runStep("Step 3: Generating invoice"))
+//   .then(() => runStep("Step 4: Sending email receipt"))
+//   .then(() => console.log("Order complete ✅"));
+
+
+
+// Assignment 4
+// Function definition
+function submitFeedback(formData) {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log(stepName);
-      resolve();
-    }, 1000);
+      if (!formData.message) {
+        reject("Message is required");
+      } else {
+        resolve(`Thanks ${formData.name}, your feedback was submitted!`);
+      }
+    }, 1500);
   });
 }
 
-runStep("Step 1: Preparing cart")
-  .then(() => runStep("Step 2: Processing payment"))
-  .then(() => runStep("Step 3: Generating invoice"))
-  .then(() => runStep("Step 4: Sending email receipt"))
-  .then(() => console.log("Order complete ✅"));
+// ✅ Valid data
+submitFeedback({ name: "Vedant", message: "Great website!" })
+  .then((res) => console.log(res))
+  .catch((err) => console.error(err))
+  .finally(() => console.log("Feedback request finished"));
+
+// ❌ Invalid data (empty message)
+submitFeedback({ name: "Vedant", message: "" })
+  .then((res) => console.log(res))
+  .catch((err) => console.error(err))
+  .finally(() => console.log("Feedback request finished"));
