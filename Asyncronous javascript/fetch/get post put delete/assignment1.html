@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="status">Loading...</p>
+    <ul id="postList"></ul>
+
+    <script>
+        let status = document.getElementById("status");
+        let postList = document.getElementById("postList");
+
+        fetch("https://jsonplaceholder.typicode.com/posts")
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error("Response was not OK");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                status.textContent = "";
+                const firstFive = data.slice(0, 5);
+
+                firstFive.forEach(post => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<strong>${post.title}</strong><br>${post.body}`;
+                    postList.appendChild(li);
+                })
+            })
+          .catch(() => {
+          status.textContent = "Failed to load posts.";
+        });
+    </script>
+</body>
+
+</html>
