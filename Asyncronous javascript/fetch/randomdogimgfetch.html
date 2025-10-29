@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Random Dog Image</h2>
+    <button id="btn">Get Dog</button>
+    <br><br>
+    <img id="dog" width="300" alt="Dog image will appear here">
+
+    <script>
+      const btn = document.getElementById("btn");
+      const dogImg = document.getElementById("dog");
+
+      btn.addEventListener("click", () => {
+        fetch("https://dog.ceo/api/breeds/image/random")
+          .then(res => res.json())
+          .then(data => {
+            dogImg.src = data.message; 
+          })
+          .catch(err => {
+            dogImg.alt = "Failed to fetch dog photo";
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>
