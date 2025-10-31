@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <button id="btn">Get Quote</button>
+
+     <div id="output"></div>
+
+     <script>
+        let output = document.getElementById("output");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            output.textContent = "Loading quote...";
+
+            fetch("https://api.quotable.io/random")
+            .then((res) => {
+                if(!res.ok){
+                    throw new Error("Server error");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                output.textContent = `${data.content} — ${data.author}`
+            })
+            .catch(() => {
+                output.textContent = "Could not load quote.";
+            })
+        })
+     </script>
+</body>
+</html>

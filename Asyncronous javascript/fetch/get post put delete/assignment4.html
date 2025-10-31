@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="deleteBtn">Delete Post 1</button>
+
+    <p id="result"></p>
+
+    <script>
+    document.getElementById("deleteBtn").addEventListener("click", () => {
+
+      fetch("https://jsonplaceholder.typicode.com/posts/1", {
+        method: "DELETE"
+      })
+      .then(res => {
+        if (res.ok) {
+          document.getElementById("result").textContent = "Post deleted ✅";
+        } else {
+          document.getElementById("result").textContent =
+            `Delete failed (status: ${res.status})`;
+        }
+      })
+      .catch(() => {
+        document.getElementById("result").textContent = "Network issue.";
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
