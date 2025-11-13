@@ -336,3 +336,84 @@
 // }
 
 // console.log("Total Area =", total.toFixed(2));
+
+
+// E1) Storage Family (Inheritance + Polymorphism)
+// E1: Storage Family
+// class Storage {
+//   // TODO: save(data)
+//   save(data) {
+//     console.log("Saving data:", data);
+//   }
+// }
+// class MemoryStorage extends Storage {
+//   // TODO: constructor() // internal array
+//   // TODO: save(data)
+//   constructor() {
+//     super();
+//     this.items = [];
+//   }
+
+//   save(data) {
+//     this.items.push(data);
+//     console.log("Saved to memory:", data);
+//   }
+// }
+// class FileStorage extends Storage {
+//   // TODO: save(data)
+//   save(data) {
+//     console.log("Saved to file:", data);
+//   }
+// }
+
+// // TODO: demo: mixed storages saving "hello"
+// const storages = [new MemoryStorage(), new FileStorage(), new MemoryStorage()];
+
+// for (let s of storages) {
+//   s.save("hello");
+// }
+
+
+// E2) Media Playlist (Polymorphism + Inheritance)
+// E2: Media Playlist
+class Media {
+  // TODO: constructor(title)
+  constructor(title){
+    this.title = title;
+  }
+  // TODO: play()
+  play(){
+   console.log(`Playing Media :${this.title}`);
+  }
+}
+class Song extends Media {
+  // TODO: constructor(title)
+  constructor(title){
+    super(title);
+  }
+  // TODO: play()
+  play(){
+    console.log(`Playing Song :${this.title}`);
+  }
+}
+class Video extends Media {
+  // TODO: constructor(title)
+  constructor(title){
+    super(title);
+  }
+  // TODO: play()
+  play(){
+    console.log(`Playing Video :${this.title}`);
+  }
+}
+
+// TODO: demo: playlist array → loop → play()
+const playlist = [
+  new Song("Shape of You"),
+  new Video("Funny Cats"),
+  new Song("Believer")
+];
+
+for (let item of playlist) {
+  item.play(); 
+}
